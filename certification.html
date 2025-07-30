@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certification Course &ndash; The LifeBox Link</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Additional styling specific to certification page */
+      .course-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+      }
+      .course-card {
+        background: #ffffff;
+        border-radius: 16px;
+        width: 280px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.1s ease;
+        cursor: pointer;
+        text-align: center;
+      }
+      .course-card h3 {
+        margin-top: 0;
+        font-size: 1.3rem;
+        color: #155799;
+      }
+      .course-card p {
+        color: #555;
+        font-size: 1rem;
+      }
+      .course-card:active {
+        transform: scale(0.97);
+      }
+      #code-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      #code-form input {
+        flex: 1 1 200px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: inherit;
+      }
+      #code-form button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        background-color: #155799;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      #code-message {
+        margin-top: 16px;
+        font-size: 1rem;
+        color: #155799;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="subpage-nav">
+      <a href="index.html" class="logo"><img src="assets/lifebox-logo.png" alt="LifeBox Link logo" /></a>
+      <a href="index.html#overview">Home</a>
+    </nav>
+    <main class="subpage">
+      <h2>Certification Course</h2>
+      <p>
+        After receiving your LifeBox, use the unique code inside to unlock training modules that teach you how to make the most of your supplies. Enter your code below to get started.
+      </p>
+      <form id="code-form">
+        <input type="text" id="code-input" placeholder="Enter your code" required />
+        <button type="submit">Submit</button>
+      </form>
+      <p id="code-message"></p>
+      <div class="course-grid">
+        <div class="course-card" onclick="alert('More content coming soon!')">
+          <h3>Module&nbsp;1</h3>
+          <p>Introduction to materials</p>
+        </div>
+        <div class="course-card" onclick="alert('More content coming soon!')">
+          <h3>Module&nbsp;2</h3>
+          <p>Hands‑on practice</p>
+        </div>
+        <div class="course-card" onclick="alert('More content coming soon!')">
+          <h3>Module&nbsp;3</h3>
+          <p>Next steps</p>
+        </div>
+      </div>
+    </main>
+    <script>
+      // Simple script to handle code submission. In a real site this would
+      // validate the code and redirect to the appropriate course page.
+      const codeForm = document.getElementById('code-form');
+      const codeMessage = document.getElementById('code-message');
+      codeForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const code = document.getElementById('code-input').value.trim();
+        if (code) {
+          codeMessage.textContent =
+            'Thank you! Your code has been recorded. Training modules will be unlocked soon.';
+          codeForm.reset();
+        }
+      });
+    </script>
+  </body>
+</html>
