@@ -1,0 +1,335 @@
+/*
+  Global styles for The LifeBox Link site
+  This stylesheet sets up the basic look and feel of the new landing page,
+  including fonts, colours, layout and animations. It aims for a clean,
+  modern aesthetic inspired by high‑end product pages.
+*/
+
+html {
+  /* Enable smooth scrolling when navigating to anchor links */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #f7f7f7; /* neutral grey backdrop for main content */
+}
+
+/* Hero section */
+#hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('assets/hero-gradient.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Primary navigation bar */
+.main-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 20;
+}
+
+.main-nav .logo img {
+  height: 60px;
+}
+
+.main-nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav .nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.main-nav .nav-links li a:hover {
+  opacity: 0.7;
+}
+
+/* Secondary navigation for external pages */
+.sub-nav {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 15;
+}
+
+.sub-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.sub-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.sub-nav a.cta {
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  backdrop-filter: blur(5px);
+}
+
+.sub-nav a:hover {
+  opacity: 0.8;
+}
+
+/* Hero content includes the large title and box illustration */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 8vw;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.hero-image {
+  width: 40vw;
+  max-width: 400px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 40px));
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Main content styling */
+main {
+  padding: 80px 20px;
+}
+
+.content-section {
+  max-width: 1000px;
+  margin: 0 auto 100px auto;
+  padding: 0 20px;
+}
+
+.content-section h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #155799;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Team member grid */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-member {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.team-member:hover {
+  transform: translateY(-6px);
+}
+
+.team-member img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  margin: 12px 0 4px;
+  font-size: 1.2rem;
+  color: #155799;
+}
+
+.team-member p {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Design iteration layout */
+.design-iteration-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.design-iteration-grid .design-text {
+  flex: 1 1 320px;
+}
+
+.design-iteration-grid .design-image {
+  flex: 1 1 320px;
+}
+
+.design-iteration-grid img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Support form styling */
+#support-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+#support-form input,
+#support-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  width: 100%;
+  resize: vertical;
+}
+
+#support-form button {
+  align-self: flex-start;
+  padding: 12px 24px;
+  background-color: #155799;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+#support-form button:hover {
+  background-color: #114a6a;
+}
+
+/* Footer styling */
+.site-footer {
+  background-color: #eaeaea;
+  text-align: center;
+  padding: 40px 20px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Navigation bar for subpages */
+.subpage-nav {
+  background-color: #155799;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+}
+.subpage-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 24px;
+  font-weight: 500;
+}
+.subpage-nav a:hover {
+  text-decoration: underline;
+}
+.subpage-nav .logo img {
+  height: 50px;
+  margin-right: 24px;
+}
+
+/* Layout for simple subpages */
+.subpage {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+.subpage h2 {
+  font-size: 2rem;
+  color: #155799;
+  margin-bottom: 20px;
+}
+.subpage p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 12vw;
+  }
+  .hero-image {
+    width: 60vw;
+  }
+  .sub-nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .main-nav {
+    padding: 10px 20px;
+  }
+  .main-nav .nav-links {
+    gap: 15px;
+  }
+  .team-member {
+    width: 90%;
+  }
+}
