@@ -46,7 +46,7 @@ body {
 /* Increase logo size on the home page */
 .main-nav .logo img {
   /* Increase the logo size on the home page for better visibility */
-  height: 120px;
+  height: 150px;
 }
 
 /* Position logo to the far left but keep navigation links centred */
@@ -142,8 +142,8 @@ body {
   /* Position the hero content relative to the exact centre of the hero.  Using
      left: 50% and translate on both axes centres the LifeBox and heading
      regardless of viewport width. */
-  /* Offset the hero slightly below dead‑centre so the navigation doesn’t overlap */
-  top: 55%;
+  /* Offset the hero content lower so the LifeBox and title sit firmly in the middle of most laptop screens */
+  top: 60%;
   left: 50%;
   right: auto;
   transform: translate(-50%, -50%);
