@@ -43,8 +43,10 @@ body {
   z-index: 200;
 }
 
+/* Increase logo size on the home page */
 .main-nav .logo img {
-  height: 60px;
+  /* Increase the logo size on the home page for better visibility */
+  height: 100px;
 }
 
 /* Position logo to the far left but keep navigation links centred */
@@ -83,8 +85,10 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  /* Keep this layer above the hero content but below the main nav */
-  z-index: 150;
+  /* Keep this layer above the hero content but below the main nav.  Raise the
+     z-index slightly so the links remain clickable even when elements like
+     the hero glitter overlap. */
+  z-index: 180;
 }
 
 .sub-nav ul {
@@ -114,22 +118,32 @@ body {
 }
 
 /* Hero content includes the large title and box illustration */
+/*
+  Position the hero content slightly lower than exact centre to account for the
+  stacked navigation bars at the top of the page. This centres the box and
+  title visually within the available space on most screens. The transform
+  still centres the element horizontally while pulling its own height up by
+  half so that the content remains anchored to its middle point.
+*/
 .hero-content {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
+/* Adjust the hero title size so the full text fits within the viewport.
+   8vw still gives a bold presence without pushing text off‑screen. */
 .hero-title {
   margin: 0;
-  font-size: 12vw;
+  font-size: 8vw;
   font-weight: 700;
   letter-spacing: -2px;
   line-height: 1;
   color: rgba(255, 255, 255, 0.85);
   opacity: 0;
+  white-space: nowrap;
   animation: fadeInUp 1.5s ease-out forwards;
 }
 
@@ -340,25 +354,55 @@ main {
 }
 
 /* Navigation bar for subpages */
+/*
+  Subpage navigation bar
+
+  For secondary pages (Sponsors, Components, Certification Course, GoFundMe) we
+  reuse the main site logo on the left and centre the links on a gradient
+  background similar to the home page. The active page can be highlighted by
+  applying an ``active`` class to its anchor.
+*/
 .subpage-nav {
-  background-color: #155799;
+  position: relative;
+  background-image: url('assets/hero-gradient.png');
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 16px 24px;
+  padding: 24px 40px;
 }
-.subpage-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  margin-right: 24px;
-  font-weight: 500;
-}
-.subpage-nav a:hover {
-  text-decoration: underline;
+.subpage-nav .logo {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .subpage-nav .logo img {
-  height: 50px;
-  margin-right: 24px;
+  height: 70px;
+}
+.subpage-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.subpage-nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.subpage-nav ul li a:hover {
+  opacity: 0.8;
+}
+.subpage-nav ul li a.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(5px);
 }
 
 /* Layout for simple subpages */
