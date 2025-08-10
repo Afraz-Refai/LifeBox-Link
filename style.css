@@ -46,14 +46,15 @@ body {
 /* Increase logo size on the home page */
 .main-nav .logo img {
   /* Increase the logo size on the home page for better visibility */
-  height: 150px;
+  height: 120px;
 }
 
 /* Position logo to the far left but keep navigation links centred */
 .main-nav .logo {
   position: absolute;
   left: 40px;
-  top: 50%;
+  /* Move the logo slightly down within the navigation bar */
+  top: 60%;
   transform: translateY(-50%);
 }
 
@@ -80,10 +81,10 @@ body {
 /* Secondary navigation for external pages */
 .sub-nav {
   position: absolute;
-  /* Position the secondary navigation below the enlarged main nav.  The
-     combined height of the main nav (logo plus padding) is roughly 160px,
-     so set the top offset accordingly. */
-  top: 160px;
+  /* Position the secondary navigation below the primary navigation.  A
+     smaller offset keeps it near the top while still leaving room for the
+     enlarged logo. */
+  top: 100px;
   left: 0;
   width: 100%;
   display: flex;
@@ -138,10 +139,14 @@ body {
   /* Push the hero content further down so it sits comfortably below the stacked
      navigation bars. Increasing this percentage moves the centre point of the
      hero downwards. */
-  top: 60%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
+  /* Position the hero content relative to the exact centre of the hero.  Using
+     left: 50% and translate on both axes centres the LifeBox and heading
+     regardless of viewport width. */
+  /* Offset the hero slightly below dead‑centre so the navigation doesn’t overlap */
+  top: 55%;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
