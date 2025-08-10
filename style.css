@@ -46,7 +46,7 @@ body {
 /* Increase logo size on the home page */
 .main-nav .logo img {
   /* Increase the logo size on the home page for better visibility */
-  height: 120px;
+  height: 150px;
 }
 
 /* Position logo to the far left but keep navigation links centred */
@@ -80,7 +80,10 @@ body {
 /* Secondary navigation for external pages */
 .sub-nav {
   position: absolute;
-  top: 80px;
+  /* Position the secondary navigation below the enlarged main nav.  The
+     combined height of the main nav (logo plus padding) is roughly 160px,
+     so set the top offset accordingly. */
+  top: 160px;
   left: 0;
   width: 100%;
   display: flex;
@@ -127,11 +130,12 @@ body {
 */
 .hero-content {
   /* Centre the hero illustration and heading horizontally and vertically.  Instead of
-     anchoring to an absolute coordinate, we stretch the container across the
-     hero and rely on auto margins to centre it horizontally.  The vertical
-     centring uses translateY on the Y axis only. */
+     anchoring to an exact coordinate, we stretch the container across the
+     hero and rely on a vertical offset to account for the stacked navigation.
+     Setting the top slightly below 50% keeps the box and title visually centred
+     even with a tall logo. */
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
