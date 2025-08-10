@@ -135,7 +135,10 @@ body {
      Setting the top slightly below 50% keeps the box and title visually centred
      even with a tall logo. */
   position: absolute;
-  top: 55%;
+  /* Push the hero content further down so it sits comfortably below the stacked
+     navigation bars. Increasing this percentage moves the centre point of the
+     hero downwards. */
+  top: 60%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
