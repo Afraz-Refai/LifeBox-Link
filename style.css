@@ -130,14 +130,20 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* Centre children horizontally using flexbox so that long headings and
+     images stack neatly and remain centred. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  max-width: 90vw;
 }
 
 /* Adjust the hero title size so the full text fits within the viewport.
    8vw still gives a bold presence without pushing text off‑screen. */
 .hero-title {
   margin: 0;
-  font-size: 8vw;
+  font-size: 7vw;
   font-weight: 700;
   letter-spacing: -2px;
   line-height: 1;
