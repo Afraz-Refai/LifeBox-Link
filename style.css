@@ -34,6 +34,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -45,15 +46,27 @@ body {
 
 /* Increase logo size on the home page */
 .main-nav .logo img {
-  /* Increase the logo size on the home page for better visibility */
-  height: 150px;
+  /* Increase the logo size on the home page for better visibility, but keep it
+     proportional so it doesn’t overwhelm the nav. */
+  height: 120px;
 }
 
 /* Position logo to the far left but keep navigation links centred */
 .main-nav .logo {
   position: absolute;
   left: 40px;
-  /* Move the logo slightly down within the navigation bar */
+  /* Move the logo slightly down within the navigation bar.  Setting
+     top to 60% aligns the centre of the logo a little below the
+     vertical centre of the navigation bar so it doesn’t overlap the
+     headline. */
+  top: 60%;
+  transform: translateY(-50%);
+}
+
+/* Position the language selector on the far right of the primary navigation */
+.main-nav .language-select {
+  position: absolute;
+  right: 40px;
   top: 60%;
   transform: translateY(-50%);
 }
@@ -84,8 +97,9 @@ body {
   /* Position the secondary navigation below the primary navigation.  A
      smaller offset keeps it near the top while still leaving room for the
      enlarged logo. */
-  top: 100px;
+  top: 120px;
   left: 0;
+  right: 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -121,6 +135,21 @@ body {
   opacity: 0.8;
 }
 
+/* Styling for the language dropdown select in the main navigation */
+.language-select select {
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.language-select select option {
+  color: #333;
+}
+
 /* Hero content includes the large title and box illustration */
 /*
   Position the hero content slightly lower than exact centre to account for the
@@ -136,17 +165,21 @@ body {
      Setting the top slightly below 50% keeps the box and title visually centred
      even with a tall logo. */
   position: absolute;
-  /* Push the hero content further down so it sits comfortably below the stacked
-     navigation bars. Increasing this percentage moves the centre point of the
-     hero downwards. */
-  /* Position the hero content relative to the exact centre of the hero.  Using
-     left: 50% and translate on both axes centres the LifeBox and heading
-     regardless of viewport width. */
-  /* Offset the hero content lower so the LifeBox and title sit firmly in the middle of most laptop screens */
-  top: 60%;
+  /* Push the hero content down so it sits comfortably below the stacked
+     navigation bars. Setting top slightly above the middle (55%) keeps
+     the LifeBox illustration and heading centred vertically on most
+     laptop screens while still accounting for the height of the two
+     navigation rows. */
+  /* Centre the hero illustration and headline both horizontally and vertically.
+     We anchor the element at 55% from the top and translate it back by its own half
+     height to account for the stacked navigation bars.  Setting both left and
+     top to 50% and using translate(-50%, -50%) aligns the centre of the hero
+     container with the middle of the available space.  A full width ensures
+     the content remains centred across the page. */
+  top: 55%;
   left: 50%;
-  right: auto;
   transform: translate(-50%, -50%);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,7 +196,8 @@ body {
   line-height: 1;
   color: rgba(255, 255, 255, 0.85);
   opacity: 0;
-  white-space: nowrap;
+  /* Allow the title to wrap naturally so it remains centred on narrower screens */
+  white-space: normal;
   animation: fadeInUp 1.5s ease-out forwards;
 }
 
