@@ -55,11 +55,10 @@ body {
 .main-nav .logo {
   position: absolute;
   left: 40px;
-  /* Move the logo slightly down within the navigation bar.  Setting
-     top to 60% aligns the centre of the logo a little below the
-     vertical centre of the navigation bar so it doesn’t overlap the
-     headline. */
-  top: 60%;
+  /* Move the logo further down within the navigation bar so it doesn’t overlap
+     the headline.  Increasing the top percentage positions the logo lower
+     relative to the height of the navigation bar, improving vertical balance. */
+  top: 65%;
   transform: translateY(-50%);
 }
 
@@ -67,7 +66,8 @@ body {
 .main-nav .language-select {
   position: absolute;
   right: 40px;
-  top: 60%;
+  /* Align the language selector with the lowered logo */
+  top: 65%;
   transform: translateY(-50%);
 }
 
@@ -179,7 +179,6 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
