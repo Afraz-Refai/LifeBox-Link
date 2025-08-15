@@ -458,6 +458,24 @@ main {
   backdrop-filter: blur(5px);
 }
 
+/* Add language selector positioning below */
+.subpage-nav .language-select {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .subpage-nav .language-select {
+    right: 20px;
+    top: auto;
+    bottom: 20px;
+    transform: none;
+  }
+}
+
 /* Layout for simple subpages */
 .subpage {
   max-width: 900px;
