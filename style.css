@@ -461,7 +461,7 @@ main {
 /* Add language selector positioning below */
 .subpage-nav .language-select {
   position: absolute;
-  right: 40px;
+  right: 400px;
   top: 50%;
   transform: translateY(-50%);
 }
